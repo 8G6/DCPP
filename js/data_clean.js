@@ -49,4 +49,4 @@ setTimeout(()=>{
     show(high,'high')
     plot('low','line',dates,low,'lowest values in $',false)
     show(low,'low')
-},10)
+},1000)
