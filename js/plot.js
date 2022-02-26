@@ -1,14 +1,3 @@
-k=Object.keys(data)
-
-dates=[]
-high =[]
-low  =[]
-
-for(i=380;i>=-6;i--){
-        dates.push(data[i.toString()]["Date"][0])
-        high.push(data[i.toString()]['High']*1e3)
-        low.push(data[i.toString()]['Low']*1e3)
-}
 
  
 ctx    = []

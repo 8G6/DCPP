@@ -32,40 +32,39 @@ function leap_year(year){
 }
 
 function encode(date){
-    date = date.split(',')
-    year = parseInt(date[1])
-    month = date[0].split(' ')
-    date  = parseInt(month[1])
-    month = month[0]
-    months = genMonths(year)
+    list    = date.split(',')
+    list[0] = list[0].split(" ")
+    day     = parseInt(list[0][1])
+    month   = list[0][0]
+    year    = parseInt(list[1])
+    
+    months  = genMonths(year)
+    keys    = Object.keys(months)
+
     days = 0
-    let keys=Object.keys(months)
     for(i=0;i<keys.length;i++){
         if(keys[i].slice(0,3)==month){
-            days+=date
+            days+=day
             break
         }
         else{
             days+=months[keys[i]]
         }
     }
+    console.log(year,month,day, ((year-2001)+days*1e-3))
     return ((year-2001)+days*1e-3)
 }
 
 function format(coded){
     coded=coded.toString().split('.')
     year = parseInt(coded[0])
-    days = parseInt()
-    if(coded[1].length==4){
-        days = parseInt(coded[1].slice(0,3))
-    }
-    else{
-        days = coded[1]
-    }
+    days = coded[1] ? parseFloat('0.'+coded[1].slice(0,3))*1000 : 0
+    console.log(days)
     return [year,days]
 }
 function decode(coded){
     [year,days]=format(coded)
+    console.log(year,days)
     months = genMonths(year)
     keys = Object.keys(months)
     val=0
@@ -75,7 +74,7 @@ function decode(coded){
             break
         }
     }
-    return `${week_finder(year,days)} ${keys[i]} ${months[keys[i]]-(val-days)}, ${year}`
+    return `${week_finder(2e3+year,days)} ${keys[i]} ${months[keys[i]]-(val-days)}, ${2e3+year}`
 }
 
 
@@ -88,3 +87,13 @@ function conv(n){
 }
 
 
+// module.exports = {
+//     format,
+//     conv,
+//     encode,
+//     decode,
+//     genMonths,
+//     week_finder,
+//     weeks,
+//     leap_year
+// }
