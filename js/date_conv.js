@@ -87,5 +87,4 @@ function conv(n){
     return [int,parseInt(float.toString().slice(0,3))]
 }
 
-// let data = require('./dataset')
 

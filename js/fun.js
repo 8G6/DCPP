@@ -18,6 +18,6 @@ function create(val){
 }
 
 function load(){
-    k=create('high')+create('low')
+    k=create('high')+create('low')+create('opening')+create('closeing')
     document.body.innerHTML+=k
 }
