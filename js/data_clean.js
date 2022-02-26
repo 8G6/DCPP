@@ -185,6 +185,6 @@ setTimeout(()=>{
     }
     update(1,2500,json,other)
 
-},500)
+},1000)
 
 
