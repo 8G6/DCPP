@@ -1,3 +1,30 @@
+ctx=[]
+charts=[]
+c=0
+plot=(id,type,label,value,title,beginAtZero=false)=>{
+    ctx.push(document.getElementById(id).getContext('2d'))
+    charts.push(new Chart(this.ctx[this.c], {
+        type: type,
+        data: {
+            labels:label ,
+            lineThickness: 5,
+            datasets: [{
+                label: title,
+                data:value
+            }]
+        },
+        
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: beginAtZero
+                }
+            }
+        }
+    }));
+    c++
+}
+
 function genMonths(year){
     return {
             January: 31,
@@ -15,7 +42,7 @@ function genMonths(year){
         }
 }
 
-let weeks = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+
 
 function week_finder(year,days){
     t_d=(year-2001)*365+days-9
@@ -51,7 +78,6 @@ function encode(date){
             days+=months[keys[i]]
         }
     }
-    console.log(year,month,day, ((year-2001)+days*1e-3))
     return ((year-2001)+days*1e-3)
 }
 
@@ -78,13 +104,6 @@ function decode(coded){
 }
 
 
-
-function conv(n){
-    n=n.toString().split('.')
-    int   = parseInt(n[0])
-    float = parseFloat('0.'+n[1])*1e3
-    return [int,parseInt(float.toString().slice(0,3))]
-}
 
 
 // module.exports = {

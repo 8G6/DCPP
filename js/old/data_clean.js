@@ -1,4 +1,10 @@
 
+Array.prototype.min = () =>{
+    return Math.min.apply(Math,this);
+}
+Array.prototype.max = () =>{
+    return Math.max.apply(Math,this);
+}
 
 dates    = []
 high     = []
@@ -10,14 +16,6 @@ index    = []
 temp_dates = []
 temp_high  = []
 
-
-function reverse(a){
-    let u=[]
-    for(i=(a.length-1);i>=0;i--){
-        u.push(a[i])
-    }
-    return u
-}
 
 function update(start,end,json,other){
     dates    = []
@@ -70,25 +68,24 @@ function simply(data){
     x=[]
     y=[]
     
-    eval(`data_exp = 1e${min_data.toString().split('.')[1].length}`)
-    
+    data_exp = 10**min_data.toString().split('.')[1].length
     min_data = min_data*data_exp
+    let u =  data.max()*data_exp
+    
+    int   = []
+    float = []
 
     for(j=0;j<data.length;j++){
         k=data[j]
         data[j]=data[j]*data_exp
-        data[j]=((data[j].toString().match('.') ? parseInt(data[j]+.1) : data[j]))
+        data[j]=((data[j].toString().match('.') ? parseInt(data[j]+.1) : data[j])-min_data)
         data[j]*=1e-3
-        y.push(conv(data[j]))
+        n=data[j]
+        n=n.toString().split('.')
+        int.push(parseInt(n[0]))
+        float.push(parseInt((parseFloat('0.'+n[1])*1e3).toString().slice(0,3)))
     }
 
-
-    int   = []
-    float = []
-    for(j=0;j<data.length;j++){
-        int.push(y[j][0]) 
-        float.push(y[j][1]) 
-    }
 
     return [int,float]
 }
