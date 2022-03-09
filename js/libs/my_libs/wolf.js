@@ -17,8 +17,13 @@ class wolf{
     take = (id,index=-1) => {
         let INDEX = [],array = [],i;
         for(i=this.start;i<this.len;i++){
-            index==-1 ? array.push(this.json[i.toString()][id]) : array.push(this.json[i.toString()][id][index])
-            INDEX.push(i+(this.start < 0 ? -this.start : 0))
+            try{
+                index==-1 ? array.push(this.json[i.toString()][id]) : array.push(this.json[i.toString()][id][index])
+                INDEX.push(i+(this.start < 0 ? -this.start : 0))
+            }
+            catch(e){
+                
+            }
         }
         this.index = INDEX
         return array

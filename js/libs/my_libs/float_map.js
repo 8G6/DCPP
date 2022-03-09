@@ -14,7 +14,12 @@ function code(n,exp,k=-1){
         n=n.toString().split('.')
         return [parseInt(n[0]),parseInt((parseFloat('0.'+n[1])*1e3).toString().slice(0,3))]
 }
+
 class map{
+    constructor(){
+        this.temp     = []
+        this.map_coff = []
+    }  
     min_map = (array) => {
         let int = [],float = [];
         let exp = map_exp(array)
@@ -23,7 +28,7 @@ class map{
             int.push(n[0])
             float.push(n[1])
         })
-
+        this.temp.push([int,float])
         return [int,float]
     }
     max_map = (array) => {
@@ -37,6 +42,7 @@ class map{
             int.push(n[0])
             float.push(n[1])
         })
+        this.temp.push([int,float])
         return [int,float]
     }
 }

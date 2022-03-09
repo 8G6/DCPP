@@ -1,4 +1,4 @@
-let {min_map}   = new map()
+let MAP   = new map()
 let temp=[]
 let reverse=(array)=>{
     temp=[]
@@ -15,11 +15,13 @@ class plot{
         this.temp   = []
         this.x      = x
         this.y      = y
+        this.slice  = []
     }  
     graph=(id,type,label,value,title,beginAtZero=false)=>{
         this.ctx.push(document.getElementById(id).getContext('2d'))
         this.charts.push(new Chart(this.ctx[this.c], {
             type: type,
+            
             data: {
                 labels:label ,
                 lineThickness: 5,
@@ -45,7 +47,7 @@ class plot{
     }
     
     show=(t,d,a)=>{
-        let clean = min_map(a)
+        let clean = MAP.min_map(a)
         this.graph(t+'_int','line',d,clean[0],t+'_int',false)
         this.graph(t+'_float','line',d,clean[1],t+'_float',false)
     }
@@ -93,6 +95,7 @@ class plot{
     }
     itrate=(array)=>{
         let temp = {};
+        this.slice.push(array)
         let y,i;
         for(i=0;i<array.length;i++){
             y    = this.y

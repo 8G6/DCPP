@@ -1,4 +1,4 @@
-let Dogie       = new wolf(data,-7);
+let Dogie       = new wolf(data,-22);
 let dates       = Dogie.take('Date',0)
 let high        = Dogie.take('High')
 let low         = Dogie.take('Low')
@@ -16,7 +16,6 @@ let obj         = {
 let Plot        = new plot(dates,obj)
 
 setTimeout(()=>{
-        Plot.itrate([[1,3000],[1,389],[1,55]])     
-
+        Plot.itrate([[1,3000],[1,389],[1,70]])     
 },1000)
 
