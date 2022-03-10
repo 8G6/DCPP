@@ -16,6 +16,7 @@ class plot{
         this.x      = x
         this.y      = y
         this.slice  = []
+        this.data   = {}
     }  
     graph=(id,type,label,value,title,beginAtZero=false)=>{
         this.ctx.push(document.getElementById(id).getContext('2d'))
@@ -50,6 +51,7 @@ class plot{
         let clean = MAP.min_map(a)
         this.graph(t+'_int','line',d,clean[0],t+'_int',false)
         this.graph(t+'_float','line',d,clean[1],t+'_float',false)
+        this.data[t]=[clean,new Date_map(d).getCoded(),d]
     }
     split=(start,end,json,other)=>{
         let dates = this.x

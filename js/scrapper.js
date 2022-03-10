@@ -4,17 +4,20 @@ p=document.querySelectorAll('#__next > div.bywovg-1.fUzJes > div.main-content > 
 k=[]
 p.forEach(n=>k.push(n.innerText))
 json = {}
-for(i=0;i<13;i++){
-    json[i]={};
-    o=u[i].innerText.split('$');
-    for(j=0;j<o.length;j++){
-        if(j!=0)
-            json[i][k[j].replaceAll('*','')]=o[j].match(',') ? parseInt(o[j].split(',').join('')) : parseFloat(o[j]);
-        else if(j<o.length-1)
-            json[i][k[j].replace(' ','_')] = parseInt(o[j].split(',').join(''))
-            
+for(i=0;i<4000;i++){
+    try{
+        json[i]={};
+        o=u[i].innerText.split('$');
+        for(j=0;j<o.length;j++){
+            if(j!=0)
+                json[i][k[j].replaceAll('*','')]=o[j].match(',') ? parseInt(o[j].split(',').join('')) : parseFloat(o[j]);
+            else if(j<o.length-1)
+                json[i][k[j].replace(' ','_')] = parseInt(o[j].split(',').join(''))
+                
+        }
+        json[i]['Date'] = o[0]
     }
-    json[i]['Date'] = o[0]
+    catch(e){}
 }
 document.querySelector('body').innerHTML = '<a>download</a>'
 

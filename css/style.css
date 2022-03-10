@@ -2,3 +2,61 @@
     width: 50%;
     height: 50%;
 }
+
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-image: radial-gradient(rgb(161, 154, 154),rgb(243, 220, 220));
+}
+.body{
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 0.8;
+   width: 100vw;
+   height: 100vh;
+   z-index: -999;
+}
+
+.center{
+    position:absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+.input{
+    top:15%;
+}
+.Box{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    width:50%;
+    height:70%;
+    color: aliceblue;
+    display: flex;
+    opacity: 0.8;
+    box-shadow: 2px 2px 3px rgb(161, 154, 154);
+    border: 2px solid white;
+    border-radius: 2%;
+}
+.title{
+    font-size: 12px;
+}
+#output1{
+    margin-left: 10%;
+}
+#output1,#output2{
+    margin-top: 20%;
+}
+.output{
+    width: 50%;
+}
+
+.but{
+    top: 32%;
+}

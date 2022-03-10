@@ -1,9 +1,9 @@
 class Date_map{
-    constructor(dates){
-        this.dates = dates
-        this.weeks = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-        this.coded = []
-    } 
+    constructor(dates=[]){
+        this.dates  = dates
+        this.weeks  = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+        this.coded  = []
+    }
     genMonths=(year)=>{
         return {
                 January: 31,
@@ -81,5 +81,8 @@ class Date_map{
         this.coded = []
         this.dates.forEach(n=>this.coded.push(this.encode(n)))
         return this.coded
+    }
+    convert=(input)=>{
+        
     }
 }

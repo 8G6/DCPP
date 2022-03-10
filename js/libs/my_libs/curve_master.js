@@ -81,7 +81,7 @@ class curve_master{
         this.coff = coff
         return coff
     }
-    predit=(x)=>{
+    predict=(x)=>{
         let i;
         let n = this.coff.length;
         let out = 0;
@@ -89,6 +89,12 @@ class curve_master{
             out+=this.coff[i] * x ** (n-i-1)
         }
         return out
+    }
+    bulk_predict=(array)=>{
+        let predited_array = []
+        for(i=0;i<array.length;i++)
+            predited_array[i]=this.predict(array[i])
+        return predited_array
     }
 }
 
