@@ -7,10 +7,10 @@
 </div>
 
 ## Team members
-1. [Devadut S Balan](https://github.com/8G6)
-2. [Manu V V](https://github.com/manuviswakarmave)
+1. [Devadut S Balan (Reg ID : 1124)](https://github.com/8G6)
+2. [Manu V V (Reg ID : 2220)](https://github.com/manuviswakarmave)
 ## Team Id
-ML /151
+ML/151
 ## Link to product walkthrough
 [drive link](https://drive.google.com/file/d/1Y_96P3FvdQvcGwUJbj8krRTRtcmpvpoa/view)
 ## How it Works ?
