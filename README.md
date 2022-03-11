@@ -1,4 +1,6 @@
-# DCPP
+<div align='center'>
+  <h1>DCPP | Dogie Coin Price Predictor</h1>
+</div>
 
 ## Team members
 1. [Devadut S Balan](https://github.com/8G6)
