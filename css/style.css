@@ -1,5 +1,6 @@
 @import url(./fonts.css);
 @import url(./keyframes.css);
+@import url(./docs.css);
 body {
   font-family: 'Imprima', sans-serif;
 }
@@ -121,18 +122,17 @@ body{
     filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
     animation: spinMatrixY 2s linear infinite;
 }
-a{ 
-    text-decoration: none;
+.item>a{ 
     color: aliceblue;
     font-family:'Supermercado One';
     font-size: 30px;
     text-shadow: 2px 2px 12px rgb(197, 184, 184);
 
 }
-a:hover{
+.item>a:hover{
     text-shadow: 2px 2px 12px rgb(7, 7, 7);
 }
-li{
+a{
     list-style: none;
     color: aliceblue;
 }

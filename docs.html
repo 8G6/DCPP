@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogie Docs</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="./imgs/logo.png" src="./imgs/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style='background-image:url("./imgs/backgroud.jpg")'>
+    <style>
+        .nav{
+            padding-bottom: 2%;
+        }
+    </style>
+        <div class="nav">
+            <ul class="nav">
+                <li><a href="index.html"><img class='logo' src="./imgs/logo.png" alt="logo"></a></li>
+                <li class="item"><a href="index.html">Home</a></li>
+                <li  class="item"><a href="data.html">Analytics</a></li>
+                <li  class="item"><a href="docs.html">Docs</a></li>
+            </ul>
+        </div>
+        <div class="TheBox">
+            <h1>Introduction</h1>
+            <p>
+                In any Mechine Learning Problem we need to go through some steps
+                <br>
+                they are
+                <br>
+            </p>
+            <ol class="doc">
+                <li>Data Collection</li>
+                <li>Data Visualization</li>
+                <li>Filtering Useful Data</li>
+                <li>Selecting Optimal Algoritham</li>
+                <li>Mapping Data</li>
+                <li>Training with Data</li>
+            </ol>
+            <h3> Let's see each in detail</h3>
+            <div class="step1">
+                <h2>1) Data Collection</h2>
+                For data Collection we used the historical data of Dogie Coin from <a href="https://coinmarketcap.com/currencies/dogecoin/historical-data/">here</a> 
+                <br>
+                The data included <br>
+                <br>
+                <ol>
+                    <li>Highest value in $ obtained for Dogie Coin at a given date</li>
+                    <li>Lowest value in $ obtained for Dogie Coin at a given date</li>
+                    <li>Opening value in $ obtained for Dogie Coin at a given date</li>
+                    <li>Closing value in $ obtained for Dogie Coin at a given date</li>
+                </ol>
+                With the help of JavaScript we collected the data from 2013 Dec 15 to 2022 Feb 23 and stored it dateset.json
+            </div>
+            <div class="step2">
+                <h2>2) Data Visualization</h2>
+                <i>
+                    "The Purpose of Computation is insight, not numbers"
+                </i>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Richard Hamming
+                <br>
+                <br>
+                <br>
+                With the help of chart.js we plotted High , Low , Opening and Closing values agaist dates.
+                From the plots we reached the following concultion
+                <br><br>
+                <ol>
+                    <li>As we know for any crypto currencies initial values will be constant for a long time.
+                        <br>This trend can be obsvered in Dogie coin data too, From 2013 Dec 15 to Dec 19 2020 the values were almost constent.(1)</li>
+                    <li>From Feb 1 2021 to Dec 17 2021 The data shows series irregularities that include a all time high values (2)</li>
+                    <li>From Dec 17 2021 to Feb 23 2022 The data is consistant  (3)</li>
+                </ol>
+                <i>
+                    NOTE:The numbers in brackets are for reffering the plots in <a href="./data.html">analytics</a> <br>
+                    for example (1) indicates the high_1 ,low_1 etc plots in <a href="./data.html">analytics</a> 
+                </i>
+                
+            </div>
+            <div class="step3">
+                <h2>3) Filtering Useful Data</h2>
+                From the Data Visualization we got an optimal dataset that is data from  Dec 17 2021 to Feb 23 2022
+            </div>
+            <div class="step5">
+                <h2>4) Selecting Optimal Algoritham</h2>
+                Since the values are in numbers we can use regression, And for regression of these datasets we can use curve fitting as the plot matches a curve<br>
+                <h3>Curve Fitting</h3>
+                Curve fitting is the process of constructing a curve, or mathematical function, that has the best fit to a series of data points, possibly subject to constraints. Curve fitting can involve either interpolation, where an exact fit to the data is required, or smoothing, in which a "smooth" function is constructed that approximately fits the data. A related topic is regression analysis, which focuses more on questions of statistical inference such as how much uncertainty is present in a curve that is fit to data observed with random errors. Fitted curves can be used as an aid for data visualization,to infer values of a function where no data are available, and to summarize the relationships among two or more variables.Extrapolation refers to the use of a fitted curve beyond the range of the observed data,and is subject to a degree of uncertainty since it may reflect the method used to construct the curve as much as it reflects the observed data.
+                <br>
+                <img src="./imgs/docs/Regression.gif" alt="Regression" class="doc-img">
+                <br>
+                 As seen from the animation we can see that if we get the optimal values of the curve coffients we will get a best approximation of the curve that could fit most of our data points 
+                <h3>Curve Fitting by Least squares</h3>
+            </div>
+            <div class="step4">
+                <h2>5) Mapping Data</h2>
+            </div>
+            <div class="step6">
+                <h2>6) Training Models with Data</h2>
+            </div>
+
+            
+        </div>
+</body>
+</html>
