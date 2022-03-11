@@ -8,11 +8,11 @@
 1. [Devadut S Balan](https://github.com/8G6)
 2. [Manu](https://github.com/manuviswakarmave)
 ## Team Id
-151
+ML /151
 ## Link to product walkthrough
 
 ## How it Works ?
-1. Step 1
+1. Go to (DCPP)[https://8g6.github.io/DCPP/]
 2. Step 2
 ## Libraries used
 1. Chart.js 3.7.1
