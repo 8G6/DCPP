@@ -1,3 +1,7 @@
+@import url(./fonts.css);
+body {
+  font-family: 'Imprima', sans-serif;
+}
 .box{
     width: 50%;
     height: 50%;
@@ -77,29 +81,22 @@ body{
     z-index: 4;
 }
 
-#datetime>#time,#datetime>#date{
+#datetime{
     display: flex;
     color: aliceblue;
     position:absolute;
     transform: translate(-50%,-50%);
     gap: 2%;
-    z-index: 3;
-}
-#datetime>#date{
-    margin-left: 48%;
-    top: 90%;
-}
-#datetime>#time{
-    margin-left: 48.5%;
-    top:82%;
-}
-#datetime>#date>div,#datetime>#time>div{
     margin: 2%;
     background-color: black;
     box-shadow: 1px 1px 1px rgb(48, 47, 47);
-    padding: 4%;
+    padding: 1%;
     border-radius: 20%;
     font-size: 30px;
+    margin-left: 48.5%;
+    top:82%;
+    font-family: Digital-7;
+    z-index: 3;
 }
 .logo{
     width: 100px;
@@ -107,6 +104,7 @@ body{
     position: absolute;
     left: 10%;
     filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
+    animation: spinMatrix 2s linear infinite;
 }
 a{ 
     text-decoration: none;
@@ -141,8 +139,28 @@ ul{
 
 .logo:hover{
     filter: drop-shadow(2px 2px 2px gold);
-    transform: matrix3d(1,2,2);
+    transform: rotateY(90deg);
+    
  }
  .input{
      font-size:20px;
  }
+
+ @keyframes spinMatrix {
+    0% { 
+        transform: rotateY(0deg);
+        filter: drop-shadow(2px 2px 5px rgb(236, 8, 46));
+    }
+    50% { 
+        transform: rotateY(180deg);
+        filter: drop-shadow(2px 2px 5px rgb(0, 255, 0));
+    }
+    100% { 
+        transform: rotateY(360deg); 
+        filter: drop-shadow(2px 2px 2px rgb(23, 44, 112));
+    }
+  }
+  .platform *, .platform  *:before, .platform *:after {
+    transform-style: preserve-3d;
+    transform-origin: center center;
+  }

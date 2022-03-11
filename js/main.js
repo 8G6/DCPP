@@ -33,22 +33,20 @@ setTimeout(()=>{
 })
 
 let time = ()=>{
-    let time_list = $('#datetime').children[0].children
-    let date_list = $('#datetime').children[1].children
+    let datetime = $('#datetime')
     let time = new Date().toString().split(' ')
     let date = time.slice(0,4)
     time     = time[4].split(':')
     time[3]='AM'
+    let k=''
     if(parseInt(time[0])>12){
         time[0]=parseInt(time[0])-12
         time[0]=time[0]<10 ? `0${time[0]}` : time[0] 
         time[3]='PM'
     }
-    for(i=0;i<time_list.length;i++){
-        time_list[i].innerHTML = time[i]
-    }
-    for(i=0;i<date_list.length;i++){
-        date_list[i].innerHTML = date[i]
-    }
+    time = time.slice(0,3).join(':')+' '+time[3]
+    date = date.join(' ')
+    
+    datetime.innerHTML=time+'<br>'+date    
 }
 setInterval(time,1000)

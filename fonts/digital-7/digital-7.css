@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Digital-7 Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Digital-7 Mono'), url('./woff/digital-7-mono-italic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Digital-7 Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Digital-7 Mono'), url('./woff/digital-7-mono.woff') format('woff');
+}
+@font-face {
+    font-family: 'Digital-7';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Digital-7'), url('./woff/digital-7.woff') format('woff');
+}
+@font-face {
+    font-family: 'Digital-7 Italic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Digital-7 Italic'), url('./woff/digital-7-italic.woff') format('woff');
+}
+
