@@ -13,7 +13,7 @@ ML /151
 
 ## How it Works ?
 1. Go to [DCPP](https://8g6.github.io/DCPP/)
-2. Select a date with the date picker and clik on Predict 
+2. Select a date with the date picker and click on Predict 
 3. You can see 8 input boxes with 8 values. Each contains Maximum , Minimum , Opening and Closing values of the selected date in Indian ruppies and US Dollers
 ## Libraries used
 1. Chart.js 3.7.1
