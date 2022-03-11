@@ -1,8 +1,8 @@
 # DCPP
 
 ## Team members
-1. ![Devadut S Balan](https://github.com/8G6)
-2. ![Manu](https://github.com/manuviswakarmave)
+1. [Devadut S Balan](https://github.com/8G6)
+2. [Manu](https://github.com/manuviswakarmave)
 ## Team Id
 151
 ## Link to product walkthrough
