@@ -16,7 +16,7 @@ body{
     padding: 0;
     margin: 0;
     width: 100%;
-    background-image: radial-gradient(rgb(161, 154, 154),rgb(243, 220, 220));
+    background-image: radial-gradient(rgb(233, 229, 229),rgb(180, 156, 156));
 }
 .body{
    background-repeat: no-repeat;
@@ -35,13 +35,14 @@ body{
 }
 .input{
     top:15%;
+    width: 50%;
 }
 .Box{
-    top: 55%;
+    top: 60%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
-    width:50%;
-    height:80%;
+    width:40%;
+    height:70%;
     color: aliceblue;
     display: flex;
     opacity: 0.8;
@@ -50,21 +51,29 @@ body{
     border-radius: 2%;
     z-index:1;
 }
+#output1,#output2{
+    display: flex;
+    flex-direction: column;
+    line-height: 35px;
+}
 .title{
-    font-size: 12px;
+    font-size: 16px;
 }
 #output1{
+    margin-left: 10%;
+}
+#output2{
     margin-left: 10%;
 }
 #output1,#output2{
     margin-top: 20%;
 }
 .output{
-    width: 50%;
+    width: 70%;
 }
 
 .but{
-    top: 29%;
+    top: 45%;
     z-index: 4;
 }
 
@@ -78,11 +87,11 @@ body{
 }
 #datetime>#date{
     margin-left: 48%;
-    top: 81%;
+    top: 90%;
 }
 #datetime>#time{
-    margin-left: 50%;
-    top: 74%;
+    margin-left: 48.5%;
+    top:82%;
 }
 #datetime>#date>div,#datetime>#time>div{
     margin: 2%;
@@ -90,18 +99,20 @@ body{
     box-shadow: 1px 1px 1px rgb(48, 47, 47);
     padding: 4%;
     border-radius: 20%;
+    font-size: 30px;
 }
 .logo{
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     left: 10%;
-    filter: drop-shadow(5px 5px 5px rgb(197, 191, 191));
+    filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
 }
 a{ 
     text-decoration: none;
     color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
 }
 li{
     list-style: none;
@@ -124,10 +135,14 @@ ul{
 .nav{
     width: 100%;
     height: 20%;
-    background-image: url("../imgs/banner.png");
-    background-size:contain;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
 }
 
 .logo:hover{
-    filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
+    filter: drop-shadow(2px 2px 2px gold);
+    transform: matrix3d(1,2,2);
+ }
+ .input{
+     font-size:20px;
  }

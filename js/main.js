@@ -38,6 +38,12 @@ let time = ()=>{
     let time = new Date().toString().split(' ')
     let date = time.slice(0,4)
     time     = time[4].split(':')
+    time[3]='AM'
+    if(parseInt(time[0])>12){
+        time[0]=parseInt(time[0])-12
+        time[0]=time[0]<10 ? `0${time[0]}` : time[0] 
+        time[3]='PM'
+    }
     for(i=0;i<time_list.length;i++){
         time_list[i].innerHTML = time[i]
     }
