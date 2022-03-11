@@ -17,17 +17,29 @@
     transform-origin: center center;
   }
 
-  @keyframes spinMatrixX {
+  @keyframes spinMatrixZ {
     0% { 
-        transform: rotateX(0deg);
+        transform: rotateZ(0deg);
         filter: drop-shadow(5px 2px 5px rgb(5, 243, 132));
     }
-    50% { 
-        transform: rotateX(-180deg);
+    20% { 
+        transform: rotateZ(-60deg);
         filter: drop-shadow(2px 5px 5px rgb(1, 24, 128));
     }
+    40% { 
+        transform: rotateY(-120deg); 
+        filter: drop-shadow(2px 2px 5px rgb(99, 217, 233));
+    }
+    60% { 
+        transform: rotateZ(-180deg);
+        filter: drop-shadow(5px 2px 5px rgb(5, 243, 132));
+    }
+    80% { 
+        transform: rotateX(-240deg);
+        filter: drop-shadow(2px 5px 5px rgb(128, 1, 50));
+    }
     100% { 
-        transform: rotateX(-360deg); 
-        filter: drop-shadow(2px 2px 5px rgb(241, 9, 230));
+        transform: rotateY(-360deg); 
+        filter: drop-shadow(2px 2px 5px rgb(215, 252, 4));
     }
   }

@@ -121,7 +121,7 @@ body{
     left: 10%;
     top: 3%;
     filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
-    animation: spinMatrixY 2s linear infinite;
+    animation: spinMatrixZ 3s linear infinite;
 }
 .item>a{ 
     color: aliceblue;
@@ -159,7 +159,7 @@ ul{
 }
 
 .logo:hover{
-    animation: spinMatrixX 2s linear infinite;
+    animation: spinMatrixY 2s linear infinite;
     
  }
  .input{

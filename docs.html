@@ -84,21 +84,181 @@
             <div class="step5">
                 <h2>4) Selecting Optimal Algoritham</h2>
                 Since the values are in numbers we can use regression, And for regression of these datasets we can use curve fitting as the plot matches a curve<br>
-                <h3>Curve Fitting</h3>
+                <h3>4.1) Curve Fitting</h3>
                 Curve fitting is the process of constructing a curve, or mathematical function, that has the best fit to a series of data points, possibly subject to constraints. Curve fitting can involve either interpolation, where an exact fit to the data is required, or smoothing, in which a "smooth" function is constructed that approximately fits the data. A related topic is regression analysis, which focuses more on questions of statistical inference such as how much uncertainty is present in a curve that is fit to data observed with random errors. Fitted curves can be used as an aid for data visualization,to infer values of a function where no data are available, and to summarize the relationships among two or more variables.Extrapolation refers to the use of a fitted curve beyond the range of the observed data,and is subject to a degree of uncertainty since it may reflect the method used to construct the curve as much as it reflects the observed data.
                 <br>
                 <img src="./imgs/docs/Regression.gif" alt="Regression" class="doc-img">
                 <br>
-                 As seen from the animation we can see that if we get the optimal values of the curve coffients we will get a best approximation of the curve that could fit most of our data points 
-                <h3>Curve Fitting by Least squares</h3>
+                 As seen from the animation we can see that if we get the optimal values of the curve coefficients we will get a best approximation of the curve that could fit most of our data points 
+                 <br>
+                 <br>
+                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.297ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 4863.8 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+                    <title id="MathJax-SVG-1-Title">{\displaystyle y=ax+b\;}</title>
+                    <defs aria-hidden="true">
+                    <path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path>
+                    </defs>
+                    <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+                     <use xlink:href="#E1-MJMATHI-79" x="0" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-3D" x="775" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-61" x="1831" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-78" x="2361" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-2B" x="3155" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-62" x="4156" y="0"></use>
+                    </g>
+                </svg>
+                <br>
+                 A first order equation has 2 coefficients and b <br>
+                 <br>
+                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.175ex" height="3.009ex" style="vertical-align: -0.671ex;" viewBox="0 -1006.6 7825.1 1295.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+                    <title id="MathJax-SVG-1-Title">{\displaystyle y=ax^{2}+bx+c\}</title>
+                    <defs aria-hidden="true">
+                    <path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path>
+                    </defs>
+                    <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+                     <use xlink:href="#E1-MJMATHI-79" x="0" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-3D" x="775" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-61" x="1831" y="0"></use>
+                    <g transform="translate(2361,0)">
+                     <use xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
+                     <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="809" y="583"></use>
+                    </g>
+                     <use xlink:href="#E1-MJMAIN-2B" x="3609" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-62" x="4610" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-78" x="5039" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-2B" x="5834" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-63" x="6835" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-2E" x="7546" y="0"></use>
+                    </g>
+                </svg>
+                <br>
+                A second order equation will have 3 coefficients a, b and c
+                <br>
+                <br>
+                In genaral an nth order curve has n+1 coefficients
+                <br>
+                <br> 
+                Our goal is to find these n+1 coefficients
+                <br> 
+                <h3>4.2) Least Squares Method</h3>
+                Least squares is a method to find the equations needed to solve a curve fitting Problem
+                We know that to solve a nth order equation we need an n equations. 
+                With help of least squares method we will find n equations and solve it and hence find the n+1 coefficients of the nth order curve
+                <br><br>
+                Lets see an example
+                <br><br>
+                For a 1st order equation the eqaution will be    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.297ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 4863.8 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+                    <title id="MathJax-SVG-1-Title">{\displaystyle y=ax+b\;}</title>
+                    <defs aria-hidden="true">
+                    <path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+                    <path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path>
+                    <path stroke-width="1" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path>
+                    </defs>
+                    <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+                     <use xlink:href="#E1-MJMATHI-79" x="0" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-3D" x="775" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-61" x="1831" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-78" x="2361" y="0"></use>
+                     <use xlink:href="#E1-MJMAIN-2B" x="3155" y="0"></use>
+                     <use xlink:href="#E1-MJMATHI-62" x="4156" y="0"></use>
+                    </g>
+                </svg>
+                <img src="./imgs/docs/least_sq.png" alt="least" class="doc-img least">
+                <br>After the above oprations we are left with 2 equations (3) and (4)
+                <br>
+                With these eqautions we can solve for a and b with the matrix method
+                <h3>4.3) Matrix Method</h3> 
+                We can represent equation (3) and (4) with matrixes like shown below
+                <img src="./imgs/docs/matrix.png" alt="least" class="doc-img least">
+                <br>
+                As we know we can find the values of matrix [a,b] with the following method
+                <br>
+                
+                <img src="./imgs/docs/matrix_eq.png" alt="least" class="doc-img least">
+                <br>
+                But as we know this method has a Problem, it involves the inverse of a matrix. To find that is a complex task and the algorithams takes lot of time to exicute 
+                <br>
+                Thats when we get the opportunity to thank <a href="https://en.wikipedia.org/wiki/Gabriel_Cramer">Gabriel Cramer</a> for making our lifes simple
+                <h3>4.4) Crammers Rule</h3>
+                In linear algebra, Cramer's rule is an explicit formula for the solution of a system of linear equations with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the column vector of right-hand-sides of the equations. It is named after Gabriel Cramer (1704–1752), who published the rule for an arbitrary number of unknowns in 1750,although Colin Maclaurin also published special cases of the rule in 1748 (and possibly knew of it as early as 1729).
+                <br>
+                It has recently been shown that Cramer's rule can be implemented in O(n3) time, which is comparable to more common methods of solving systems of linear equations, such as Gaussian elimination (consistently requiring 2.5 times as many arithmetic operations for all matrix sizes), while exhibiting comparable numeric stability in most cases.
+                <br>
+                <br>
+                Lets see how we do it in the Cramer's way
+                <br>
+                <br>
+                By Cramer's rule a and b can be found using the following eqautions
+                <br>
+                <img src="./imgs/docs/cramer.png" alt="least" class="doc-img least">
+                <br>
+                By looking at the equations we can see that the numrator part of equation for a is the determinant of matrix that is formed with first colum matrix A  replaced by matrix B and for b is the determinant of matrix that is formed with second colum matrix A  replaced by matrix B 
+                <br>
+                By this method we can solve nth order curves with n+1 coefficients
+                <br>
+                <br>
+                But there is another problem, I swear this is the last and final problem
+                <br>
+                <br>
+                Conventional method of finding determinant of a matrix has a very high time complexity. So we first convert the matrix to a upper triagular matix and find the product of its diagonal elements (as we know for a upper triagular matrix the determinant is the product of its diagonal elements by the properties of determinants)
             </div>
             <div class="step4">
                 <h2>5) Mapping Data</h2>
-            </div>
+                <br>
+                <br>
+                As we are using regression , we need both the input and out as numbers so ,we need to convert the dates to numbers<br>
+                What we did we substrated 2001 from year part and counded the number of dates till that date and multiplied by 0.001  and added
+                <br>
+                <br>
+                <i>for example</i>
+                <br>
+                    <br>
+                    date = 12 March 2021
+                    <br>
+                    <br>
+                    2021 = 2021-2001 = 20
+                    <br>
+                    <br>
+                    2021 is not not a leap year so Feb has 28 days
+                    <br>
+                    <br>
+                    So number of days till March 12 
+                    <br>
+                    <br>
+                    days = 31 + 28 + 12 = 71
+                    <br>
+                    <br>
+                    days * 0.001 = 0.071
+                    <br>
+                    <br>
+                    coded days  = 20.071
+                    <br> <br>
+                    In Analytics (3) we can see Int and Float data 
+                    <br>
+                    We mapped the decimal values by multpying it with the exponent that gives a   number greater tahn 0 when we multiply it with lowest values in an array
+                    and this value is splitted into into intigers and floats and each is plotted as _int and _float. This increses the accuracy as we can see the int part for Analytics (3) is almost consistant           </div>
             <div class="step6">
                 <h2>6) Training Models with Data</h2>
+                Finally we train the data using curve_master model
+                <br>
+                The trined model is given to predictor and it will Predict the values 
             </div>
-
+            
             
         </div>
 </body>

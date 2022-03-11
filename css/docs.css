@@ -3,16 +3,20 @@
     position: absolute;
     width: 70%;
     margin-left: 10%;
-    height: 400%;
+    height: 650%;
     background-color: rgb(0, 0, 0);
     color: aliceblue;
-    border-radius: 5%;
+    border-radius: 2%;
     opacity: 0.9;
     padding: 5%;
     text-align:left;
     box-shadow: 2px 2px 3px rgb(0, 0, 0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
 }
-
+h3{
+    text-decoration: underline;
+}
 .body{
     background-repeat: repeat;
     z-index: -1;
@@ -27,3 +31,7 @@
     border-radius: 4%;
 }
 
+.least{
+    width: 50%;
+    height: 50%;
+}
