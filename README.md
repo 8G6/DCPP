@@ -12,7 +12,7 @@ ML /151
 ## Link to product walkthrough
 
 ## How it Works ?
-1. Go to (DCPP)[https://8g6.github.io/DCPP/]
+1. Go to [DCPP](https://8g6.github.io/DCPP/)
 2. Step 2
 ## Libraries used
 1. Chart.js 3.7.1
