@@ -1,5 +1,7 @@
 <div align='center'>
   <h1>DCPP | Dogie Coin Price Predictor</h1>
+  This Project Inludes a Mechine Learning Algoritham this is fully written in JavaScript
+  Detailed Working is given in [docs](https://8g6.github.io/DCPP/docs.html)
 </div>
 
 ## Team members
