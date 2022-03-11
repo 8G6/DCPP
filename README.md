@@ -11,7 +11,11 @@
 1. Step 1
 2. Step 2
 ## Libraries used
-Library Name - Version
+1. Chart.js 3.7.1
 ## How to configure
-Instructions for setting up project
+Clone the repo
+```console
+git clone https://github.com/8G6/DCPP.git
+```
 ## How to Run
+Open the index.html from DCPP-master
