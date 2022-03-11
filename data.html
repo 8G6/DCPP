@@ -8,7 +8,15 @@
     <link id="favicon" rel="shortcut icon" type="image/png" href="./imgs/logo.png" src="./imgs/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="load(1,4)">
+<body onload="load(1,4)" style="overflow-y: visible;">
+    <header>
+        <ul>
+            <li><a href="index.html"><img class='logo' src="./imgs/logo.png" alt="logo"></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data.html">Data Analytics</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
+    </header>
     <canvas id="full"></canvas>
     <script src="./js/libs/other_libs/chart.js"></script>
 
@@ -23,7 +31,5 @@
 
     <script src="./js/fun.js"></script>
     <script src="./js/data.js"></script>
-    <button onclick="see('plots')">Hide</button>
-    <a href="./test.html">go</a>
 </body>
 </html>

@@ -10,7 +10,7 @@ function range(start,end,step=1){
 }
 function create(val){
     return `
-    <div class="${val}">
+    <div class="canvas">
         <h1>${val} value of a day</h1>
         <canvas id="${val}"></canvas>
         <div style="display: flex;">
@@ -57,9 +57,9 @@ function table(date,value){
     return `
     <div>
         <h1 class='title'>${camel(value)} value of ${date}</h1>
-        ₹ : <input type="text" id="${value}_inr" class='output'>
-        <br>
         $ : <input type="text" id="${value}_usd" class='output'>
+        <br>
+        ₹ : <input type="text" id="${value}_inr" class='output'>
     </div>
             `
 }

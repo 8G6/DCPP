@@ -17,10 +17,10 @@ body{
 .body{
    background-repeat: no-repeat;
    background-size: cover;
-   opacity: 0.8;
+   opacity: 0.85;
    width: 100vw;
    height: 100vh;
-   z-index: -999;
+   z-index: -1;
 }
 
 .center{
@@ -33,16 +33,18 @@ body{
     top:15%;
 }
 .Box{
+    top: 55%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
     width:50%;
-    height:70%;
+    height:80%;
     color: aliceblue;
     display: flex;
     opacity: 0.8;
     box-shadow: 2px 2px 3px rgb(161, 154, 154);
     border: 2px solid white;
     border-radius: 2%;
+    z-index:1;
 }
 .title{
     font-size: 12px;
@@ -58,5 +60,69 @@ body{
 }
 
 .but{
-    top: 32%;
+    top: 29%;
+    z-index: 4;
 }
+
+#datetime>#time,#datetime>#date{
+    display: flex;
+    color: aliceblue;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    gap: 2%;
+    z-index: 3;
+}
+#datetime>#date{
+    margin-left: 48%;
+    top: 81%;
+}
+#datetime>#time{
+    margin-left: 50%;
+    top: 74%;
+}
+#datetime>#date>div,#datetime>#time>div{
+    margin: 2%;
+    background-color: black;
+    box-shadow: 1px 1px 1px rgb(48, 47, 47);
+    padding: 4%;
+    border-radius: 20%;
+}
+.logo{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 10%;
+    filter: drop-shadow(5px 5px 5px rgb(197, 191, 191));
+}
+a{ 
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+li{
+    list-style: none;
+    color: aliceblue;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+ul{
+    display: flex;
+    margin-top: 0;
+    margin-left:60%;
+    gap: 5%;
+    padding-top: 2%;
+}
+.nav{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.logo:hover{
+    filter: drop-shadow(3px 3px 3px rgb(1, 20, 20));
+ }

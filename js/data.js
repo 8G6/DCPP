@@ -25,17 +25,20 @@ setTimeout(()=>{
         let i,j;
         models = {}
         coff   = {}
+        nocode = {}
         Plot.itrate([[1,3000],[1,389],[1,70]]) 
         splitted = Plot.data 
         Keys = ['high_3','low_3','closeing_3','opening_3']
         for(i=0;i<Keys.length;i++){
                 models[Keys[i]]={}
                 coff[Keys[i]]={}
+                nocode[Keys[i]]={}
                 for(j=2;j<4;j++){
                         models[Keys[i]][`order_${j}`]=new curve_master()
                         coff[Keys[i]][`order_${j}`]=models[Keys[i]][`order_${j}`].curve_fit(splitted[Keys[i]][1],splitted[Keys[i]][0][1],j)
                         coff[Keys[i]][`int`]=avg(splitted[Keys[i]][0][0])
                         coff[Keys[i]][`exp`]=splitted[Keys[i]][0][2]
+                        nocode[Keys[i]][`order_${j}`]=models[Keys[i]][`order_${j}`].curve_fit(splitted[Keys[i]][1],splitted[Keys[i]][0][3],j)
                 }
         }
 

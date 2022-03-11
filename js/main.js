@@ -1,6 +1,6 @@
 
 
-let dogie_high      = new predictor('high','order_3')
+let dogie_high      = new predictor('high')
 let dogie_low       = new predictor('low','order_3')
 let dogie_closeing  = new predictor('closeing','order_3')
 let dogie_opening   = new predictor('opening','order_3')
@@ -26,8 +26,23 @@ setTimeout(()=>{
 },1)
 
 setTimeout(()=>{
-    for(i=0;i<array[i].length;i++){
+    for(i=0;i<array.length;i++){
         $(`#${array[i]}_inr`).value = models[i].predict(today)*75
         $(`#${array[i]}_usd`).value = models[i].predict(today)
     }
 })
+
+let time = ()=>{
+    let time_list = $('#datetime').children[0].children
+    let date_list = $('#datetime').children[1].children
+    let time = new Date().toString().split(' ')
+    let date = time.slice(0,4)
+    time     = time[4].split(':')
+    for(i=0;i<time_list.length;i++){
+        time_list[i].innerHTML = time[i]
+    }
+    for(i=0;i<date_list.length;i++){
+        date_list[i].innerHTML = date[i]
+    }
+}
+setInterval(time,1000)
