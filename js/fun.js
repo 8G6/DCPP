@@ -67,27 +67,34 @@ function table(date,value){
 function Predict(){
     let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     let date   = $('#date').value.split('-')
-    console.log(date)
-    date       = months[parseInt(date[1])-1]+' '+date[2]+', '+date[0]
+    if(date.length>1){
+        date       = months[parseInt(date[1])-1]+' '+date[2]+', '+date[0]
    
-    out1 = ''
-    out2 = ''
-
-    for(i=0;i<2;i++){
-        out1 += table(date,array[i])
-    }
-    for(i=2;i<array.length;i++){
-        out2 += table(date,array[i])
-    }
-    setTimeout(()=>{
-            $('#output1').innerHTML = out1
-            $('#output2').innerHTML = out2
-    },1)
+        out1 = ''
+        out2 = ''
     
-    setTimeout(()=>{
-        for(i=0;i<array[i].length;i++){
-            $(`#${array[i]}_inr`).value = models[i].predict(date)*75
-            $(`#${array[i]}_usd`).value = models[i].predict(date)
+        for(i=0;i<2;i++){
+            out1 += table(date,array[i])
         }
-    })
+        for(i=2;i<array.length;i++){
+            out2 += table(date,array[i])
+        }
+        setTimeout(()=>{
+                $('#output1').innerHTML = out1
+                $('#output2').innerHTML = out2
+        },1)
+        if(date.length>1){
+            setTimeout(()=>{
+                for(i=0;i<array[i].length;i++){
+                    $(`#${array[i]}_inr`).value = models[i].predict(date)*75
+                    $(`#${array[i]}_usd`).value = models[i].predict(date)
+                }
+            })
+        }
+        
+    }
+
+    else{
+        alert('Enter a date to esitimate a prediction')
+    }
 }

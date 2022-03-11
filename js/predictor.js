@@ -18,7 +18,7 @@ class predictor{
             y+=this.coff[i] * x ** (n-i-1)
         }
         y = ((this.int+(y*1e-3))/this.exp)*1e3
-        return y-1e-2
+        return ((y-1e-2)**2)**0.5
     }
     predict_nomap=(x)=>{
         x=encode(x)
@@ -26,7 +26,7 @@ class predictor{
         for(i=0;i<n;i++){
             y+=this.nomap[i] * x ** (n-i-1)
         }
-        return y-1e-2
+        return ((y-1e-2)**2)**0.5
     }
     bulk_predict=(array)=>{
         let predict_array = []
