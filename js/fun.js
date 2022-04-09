@@ -1,7 +1,7 @@
 let $ = (a) => document.querySelector(a) 
 
 let test;
-
+INR = 76.41
 function range(start,end,step=1){
     let temp=[]
     for(i=start;i<end;i+=step)
@@ -86,7 +86,7 @@ function Predict(){
         if(date.length>1){
             setTimeout(()=>{
                 for(i=0;i<array[i].length;i++){
-                    $(`#${array[i]}_inr`).value = models[i].predict(date)*75
+                    $(`#${array[i]}_inr`).value = models[i].predict(date)*INR
                     $(`#${array[i]}_usd`).value = models[i].predict(date)
                 }
             })
